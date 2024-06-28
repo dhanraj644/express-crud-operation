@@ -1,0 +1,31 @@
+
+<table border="2">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>number</th>
+        <th>gender</th>
+        <th>
+            action
+        </th>
+
+
+    </tr>
+    
+    <%for(var i=0;i<mydata.length;i++){%>
+        <tr>
+            <td><%=i+1%></td>
+            <td><%= mydata[i].uname%></td>
+            <td><%= mydata[i].umobile%></td>
+            <td><%= mydata[i].ugender%></td>
+
+                <td>
+                    <a href="/add">Add</a>
+                    <a href="/show/<%= mydata[i]._id %>">show</a>
+                    <a href="/edit/<%= mydata[i]._id %>">update</a>
+                    <a href="/delete/<%= mydata[i]._id %>" onclick="return confirm('sure you want to delete ?')">delete</a>
+
+                </td>
+        </tr>
+        <%}%>
+</table>
